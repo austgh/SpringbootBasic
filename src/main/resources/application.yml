@@ -1,0 +1,28 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/mytest?serverTimezone=UTC
+      password: 123456
+      username: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      filters: stat,wall,slf4j
+      initial-size: 3
+      min-idle: 3
+      max-active: 10
+      max-wait: 6000
+      stat-view-servlet:
+        login-password: admin
+        login-username: admin
+        enabled: true
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 2000
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: com.austgh.entity
