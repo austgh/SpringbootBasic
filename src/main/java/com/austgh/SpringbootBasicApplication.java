@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.austgh.mapper")
 public class SpringbootBasicApplication {
    final static Logger logger= LoggerFactory.getLogger("SpringbootBasicApplication");
-
     public static void main(String[] args) {
         SpringApplication.run(SpringbootBasicApplication.class, args);
         logger.info("启动成功!");
