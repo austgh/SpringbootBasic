@@ -1,7 +1,6 @@
 package com.austgh.IOC;
 
 import com.austgh.annotation.GhAnnotation;
-import com.austgh.contronl.OrderController;
 
 import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Field;
@@ -12,13 +11,13 @@ import java.util.stream.Stream;
  */
 public class SpringIOC {
     public static void main(String[] args) {
-        OrderController orderController=new OrderController();
-        Class<? extends OrderController> clazz = orderController.getClass();
-        Stream.of(clazz.getDeclaredFields()).forEach(filed->{
-            if(filed.getAnnotation(GhAnnotation.class)!=null){
-                filed.setAccessible(true);
-            }
-        });
+        //OrderController orderController=new OrderController();
+        //Class<? extends OrderController> clazz = orderController.getClass();
+        //Stream.of(clazz.getDeclaredFields()).forEach(filed->{
+        //    if(filed.getAnnotation(GhAnnotation.class)!=null){
+        //        filed.setAccessible(true);
+        //    }
+        //});
     }
 
     //public static void main(String[] args) {

@@ -10,15 +10,17 @@ import org.springframework.core.type.AnnotationMetadata;
 
 
 /**
- *实现ImportBeanDefinitionRegistrar 接口
+ * 实现ImportBeanDefinitionRegistrar 接口
+ *
  * @Import 对应的实现类的时候，会调用registerBeanDefinitions方法
  */
 public class ImportDmo implements ImportBeanDefinitionRegistrar {
     @Override
-    public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry, BeanNameGenerator importBeanNameGenerator) {
+    public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry,
+                                        BeanNameGenerator importBeanNameGenerator) {
         AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
         beanDefinition.setBeanClass(A.class);
         beanDefinition.getConstructorArgumentValues().addGenericArgumentValue("gonghe");
-        registry.registerBeanDefinition("testA",beanDefinition);
+        registry.registerBeanDefinition("testA", beanDefinition);
     }
 }

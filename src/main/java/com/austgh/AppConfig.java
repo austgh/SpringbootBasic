@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan("com.austgh")
-@MapperScan("com.austgh.mapper")
+//@MapperScan("com.austgh.mapper")
 @Import(ImportDmo.class)
 public class AppConfig {
 }
